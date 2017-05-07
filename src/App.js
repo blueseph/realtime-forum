@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import Header from './components/header/header/header.component';
-import Landing from './components/body/landing/landing.component';
+import Landing from './components/landing/landing.component';
+import { Provider } from 'react-redux';
+import { BrowserRouter, Route } from 'react-router-dom';
 
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import configureStore from './redux/store';
 
-class App extends Component {
-  render() {
-    return (
-      <MuiThemeProvider>
-        <div>
-          <Header />
-          <Landing />
-        </div>
-      </MuiThemeProvider>
-    );
-  }
-}
+const store = configureStore();
+
+const App = () => (
+  <Provider store={store}>
+    <BrowserRouter>
+      <div>
+        <Route path="/" component={Landing} />
+      </div>
+    </BrowserRouter>
+  </Provider>
+);
 
 export default App;

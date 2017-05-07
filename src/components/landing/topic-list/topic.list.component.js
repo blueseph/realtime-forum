@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { database } from '../../../../utils/firebase';
+import { database } from '../../../utils/firebase';
 import Paper from 'material-ui/Paper';
 
 import Topic from './topic/topic.component';
@@ -19,7 +19,7 @@ class Topics extends Component {
 
     database.ref('topics/').on('child_added', values => {
       this.setState({
-        topics: [ ... this.state.topics, values.val() ],
+        topics: [ ...this.state.topics, values.val() ],
       })
     })
   }

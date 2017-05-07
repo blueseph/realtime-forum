@@ -1,7 +1,7 @@
 import React from 'react';
 import { Toolbar, ToolbarGroup, ToolbarTitle, ToolbarSeparator } from 'material-ui/'
 
-import Search from '../search/search.component';
+import Search from './search/search.component';
 
 const LogoStyle = {
   marginLeft: '25px',
