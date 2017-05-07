@@ -3,16 +3,14 @@ import React from 'react';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
-import { database } from '../../../../utils/firebase';
+const topic = {name : `new name - time ${new Date()}`};
 
-const makeTopic = async () => {
-  await database.ref('topics/').push({ name: `new name - time ${new Date()}`});
-}
-
-const AddTopicButton = () => (
+const AddTopicButton = ({
+  addTopic
+}) => (
   <div>
     <FloatingActionButton>
-      <ContentAdd onClick={makeTopic}/>
+      <ContentAdd onClick={addTopic.bind(null, topic)}/>
     </FloatingActionButton>
   </div>
 )

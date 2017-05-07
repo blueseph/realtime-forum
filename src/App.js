@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Landing from './components/landing/landing.component';
+import Landing from './components/landing/landing.container';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, } from 'react-router-dom';
 
 import configureStore from './redux/store';
 

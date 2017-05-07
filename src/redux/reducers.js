@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-const fakeReducer = () => ({ hi: 'hello' });
+import topics from '../components/landing/topic-list/topic-list.redux';
 
 const reducer = combineReducers({
-  fakeReducer,
+  topics,
 });
 
 export default reducer;
